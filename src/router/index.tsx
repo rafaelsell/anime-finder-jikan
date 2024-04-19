@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { AnimeByIdPage, HomePage } from "../pages";
+import { AnimeByIdPage, HomePage, AnimeSearchPage } from "../pages";
 
 export const router = createBrowserRouter([
   {
@@ -9,5 +9,8 @@ export const router = createBrowserRouter([
   {
     path: "anime/:id",
     element: <AnimeByIdPage />,
+  },{
+    path: "search/:q",
+    element: <AnimeSearchPage />,
   },
 ]);
