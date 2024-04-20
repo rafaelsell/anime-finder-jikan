@@ -1,6 +1,7 @@
 import { Stack, Text } from "@chakra-ui/react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useGetAnimeBySearch } from "../api/hooks";
+import { AnimeCard, Navbar } from "../components";
 
 export const AnimeSearchPage = () => {
   const { q } = useParams();
@@ -15,16 +16,15 @@ export const AnimeSearchPage = () => {
   console.log(q);
 
   return (
-    <Stack color={"white"}>
+    <Stack px={4} py={6} justify={'center'} minH={'100%'} gap={6} color={"white"} w={'100%'} direction={'column'}>
+      <Navbar/>
       {isLoading && <Text>Loading...</Text>}
       {error && <Text>An error occurred: {error.message}</Text>}
-      {animes?.data.map((anime) => {
-        return (
-          <Stack key={anime.mal_id.toString()}>
-            <Link to={`/anime/${anime.mal_id}`}>{anime.title}</Link>
-          </Stack>
-        );
-      })}
+      <Stack w={'100%'} align={'center'} justify={'center'} wrap={'wrap'} direction={'row'} gap={6}>
+      {animes?.data.map((anime) => (
+        <AnimeCard key={anime.title} anime={anime} />
+      ))}
+      </Stack>
     </Stack>
   );
 };

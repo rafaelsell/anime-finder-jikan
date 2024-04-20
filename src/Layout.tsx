@@ -7,8 +7,8 @@ type LayoutProps = {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <Stack bgColor={"#242424"} w={"100%"} minH={"100vh"} align={"center"}>
-      <Stack w={"100%"} h={"100%"} maxW={"1200px"}>
+    <Stack bgColor={'brand.200'} w={"100%"} minH={"100vh"} align={"center"}>
+      <Stack w={"100%"} h={'100%'} maxW={"1200px"} minH={'100vh'}>
         {children}
       </Stack>
     </Stack>
