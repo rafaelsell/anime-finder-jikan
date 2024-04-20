@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import './index.css';
 
 import "@fontsource/montserrat/100.css";
 import "@fontsource/montserrat/200.css";
